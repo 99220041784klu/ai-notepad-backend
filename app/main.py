@@ -12,10 +12,10 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_URL],   
+    allow_origins=["*"],  # allow all origins temporarily
     allow_credentials=True,
-    allow_methods=["*"],            
-    allow_headers=["*"],            
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(auth.router,      prefix="/v1")
